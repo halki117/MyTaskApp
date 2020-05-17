@@ -1,0 +1,41 @@
+.header
+  TaskTool
+.background
+  .lists
+    %ul#content1.content
+      .title 
+        title1
+      %li box1-1
+      %li box1-2
+      %li box1-3
+      %li box1-4
+    %ul#content2.content
+      .title title2
+      %li box2-1
+      %li box2-2
+      %li box2-3
+    %ul#content3.content
+      .title title3
+      %li box3-1
+      %li box3-2
+      %li box3-3
+
+    :javascript
+      $(function(){
+        $('.content').sortable({
+          connectWith: ".content",
+          
+        });
+        
+        // $(',content').resizable();
+        
+        // $('.target').droppable({
+        //   accept: '.box',
+        //   hoverClass: 'hover',
+        //   tolerance: 'fit',
+        //   drop: function(e, ui){
+        //     ui.draggable.appendTo(this);
+        //     console.log('dropped!');
+        //   }
+        // });
+      });
