@@ -1,0 +1,7 @@
+.list_new
+  .notice
+    リストの内容を入力してください
+  .list_form
+    = form_for(@list) do |f|
+      = f.text_field :name
+      = f.submit

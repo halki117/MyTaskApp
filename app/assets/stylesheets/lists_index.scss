@@ -5,12 +5,22 @@
 .header{
   width: 100%;
   height: 50px;
-  text-align: center;
+  display: flex;
+  // text-align: center;
   font-weight: bold;
   background-color: gainsboro;
   padding-top: 25px;
   letter-spacing: 10px;
   font-size: 30px;
+
+  &_title{
+    margin: 0 auto;
+  }
+
+  &_right{
+    font-size: 20px;
+    margin-right: 20px;
+  }
 }
 
 .background{
@@ -28,12 +38,15 @@
 
       .title{
         padding: 10px;
-        background-color: aliceblue;
+        background-color: gainsboro;
+        display: flex;
+        justify-content: space-between;
       }
 
       li{
         margin: 20px;
         padding: 20px;
+        background: whitesmoke;
       }
       
     }
@@ -45,6 +58,11 @@
   height: 100%;
   background: greenyellow;
   margin: 20px;
+
+  .card_create{
+    text-align: center;
+    margin: 20px ;
+  }
 }
 
 
