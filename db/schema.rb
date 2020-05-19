@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200517123034) do
+ActiveRecord::Schema.define(version: 20200518121310) do
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title",                    null: false
+    t.text     "memo",       limit: 65535
+    t.integer  "list_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["list_id"], name: "index_cards_on_list_id", using: :btree
+  end
 
   create_table "lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -18,4 +27,5 @@ ActiveRecord::Schema.define(version: 20200517123034) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cards", "lists"
 end

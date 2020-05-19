@@ -14,13 +14,24 @@
           .title_edit
             = link_to "編集", edit_list_path(list.id)
             = link_to "削除", list, method: :delete, data: {confirm: "#{list.name}を削除していいですか？"}
+        - list.cards.each do |card|
+          = link_to list_card_path(list, card) do
+            %li 
+              = card.title
+              - if card.memo.size > 0
+                .card_detail
+                  ◼︎ 
+              .card_delete
+                =link_to "消", list_card_path(card.list.id, card.id), method: :delete, data: { confirm: "このカードを削除してよろしいですか？"}
+
+
         -# %li card1-1
         -# %li card1-2
         -# %li card1-3
         -# %li card1-4
         -if @list != ""
           .card_create
-            =link_to "カードの作成","#"
+            =link_to "カードの作成", new_list_card_path(list)
     
     %ul#content2.content
       .title 
