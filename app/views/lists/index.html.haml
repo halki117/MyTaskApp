@@ -23,33 +23,27 @@
                   ◼︎ 
               .card_delete
                 =link_to "消", list_card_path(card.list.id, card.id), method: :delete, data: { confirm: "このカードを削除してよろしいですか？"}
-
-
-        -# %li card1-1
-        -# %li card1-2
-        -# %li card1-3
-        -# %li card1-4
         -if @list != ""
           .card_create
             =link_to "カードの作成", new_list_card_path(list)
     
-    %ul#content2.content
-      .title 
-        title2
-      %li card2-1
-      %li card2-2
-      %li card2-3
-      .card_create
-        =link_to "カードの作成","#"
+    -# %ul#content2.content
+    -#   .title 
+    -#     title2
+    -#   %li card2-1
+    -#   %li card2-2
+    -#   %li card2-3
+    -#   .card_create
+    -#     =link_to "カードの作成","#"
 
-    %ul#content3.content
-      .title 
-        title3
-      %li card3-1
-      %li card3-2
-      %li card3-3
-      .card_create
-        =link_to "カードの作成","#"
+    -# %ul#content3.content
+    -#   .title 
+    -#     title3
+    -#   %li card3-1
+    -#   %li card3-2
+    -#   %li card3-3
+    -#   .card_create
+    -#     =link_to "カードの作成","#"
 
     -# %ul#content4.content
     -#   .title 
