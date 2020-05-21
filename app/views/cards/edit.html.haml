@@ -1,0 +1,16 @@
+.card_new
+  .notice
+    カードの内容を入力してください
+  .card_form
+    = form_for @card, url:{action: 'update'} do |f|
+      = f.hidden_field :list_id, value: @card.list_id
+      .card_title 
+        = f.label :title
+        = f.text_field :title
+      .card_memo
+        = f.label :memo
+        = f.text_area :memo
+      .list_select
+        = select :card, :list_id, List.all.map{ |l| [l.name, l.id] },{},{class: "select"}
+      .card_submit
+        = f.submit

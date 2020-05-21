@@ -1,0 +1,35 @@
+.card_edit{
+  height: 100vh;
+  background: skyblue;
+  text-align: center;
+  margin: 0 auto;
+  .notice{
+    padding-top: 25%;
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input[type="text"]{
+    width: 40%;
+    height: 40px;
+    margin-left: 75px;
+    font-size: 25px;
+
+  }
+
+  textarea{
+    width: 40%;
+    height: 100px;
+    margin-left: 60px;
+    font-size: 25px;
+    margin-top: 30px;
+  }
+  input[type="submit"]{
+    width: 100px;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 100px;
+  }
+
+}
