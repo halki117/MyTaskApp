@@ -1,0 +1,11 @@
+.show
+  .card_show_title
+    %span タイトル
+    = @card.title
+  .card_show_memo
+    %span メモ
+    = @card.memo
+  .card_edit_link
+    =link_to "<カードを編集>", edit_list_card_path(@card.list_id, @card.id)
+
+

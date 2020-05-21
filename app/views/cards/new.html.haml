@@ -1,0 +1,14 @@
+.card_new
+  .notice
+    カードの内容を入力してください
+  .card_form
+    = form_for [@list, @card] do |f|
+      = f.hidden_field :list_id, value: @list.id
+      .card_title 
+        = f.label :title
+        = f.text_field :title
+      .card_memo
+        = f.label :memo
+        = f.text_area :memo
+      .card_submit
+        = f.submit
