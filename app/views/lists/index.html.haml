@@ -8,7 +8,7 @@
   .background
     .lists
       - @list.each do |list|
-        %ul#content1.content
+        %ul.content{id: "content#{list.id}"}
           .title
             .title_name
               = list.name
@@ -53,22 +53,14 @@
       -#     =link_to "カードの作成","#"
 
 
-    :javascript
-      $(function(){
-        $('.content').sortable({
-          connectWith: ".content",
-          
-        });
-        
-        // $(',content').resizable();
-        
-        // $('.target').droppable({
-        //   accept: '.box',
-        //   hoverClass: 'hover',
-        //   tolerance: 'fit',
-        //   drop: function(e, ui){
-        //     ui.draggable.appendTo(this);
-        //     console.log('dropped!');
-        //   }
-        // });
-      });
+:javascript
+  var list_id = $("ul[id]");
+  console.log(list_id);
+  $(function(){
+    $(liast_id).sortable({
+      connectWith: ".content",
+      update: function() {
+        console.log("ok");
+      }
+    });
+  });
