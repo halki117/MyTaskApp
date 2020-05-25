@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20200518121310) do
     t.string   "title",                    null: false
     t.text     "memo",       limit: 65535
     t.integer  "list_id"
+    t.integer  "position"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["list_id"], name: "index_cards_on_list_id", using: :btree
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(version: 20200518121310) do
 
   create_table "lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
+    t.integer  "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

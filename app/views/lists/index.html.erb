@@ -1,0 +1,52 @@
+<%= tag.div id: :bords, data: { lists: @list.to_json(inculude: :cards)} %>
+
+
+
+
+
+
+
+# .main
+#   .header
+#     .header_title
+#       TaskTool
+#     .header_right
+#       =link_to "リストを作成", new_list_path
+
+#   .background
+#     .lists
+#       - @list.each do |list|
+#         %ul.content{id: "content#{list.id}"}
+#           .title
+#             .title_name
+#               = list.name
+#             .title_edit
+#               = link_to "編集", edit_list_path(list.id)
+#               = link_to "削除", list, method: :delete, data: {confirm: "#{list.name}を削除していいですか？"}
+#           - list.cards.each do |card|
+#             = link_to list_card_path(list, card) do
+#               %li 
+#                 = card.title
+#                 - if card.memo.size > 0
+#                   .card_detail
+#                     ◼︎ 
+#                 .card_delete
+#                   =link_to "消", list_card_path(card.list.id, card.id), method: :delete, data: { confirm: "このカードを削除してよろしいですか？"}
+#           -if @list != ""
+#             .card_create
+#               =link_to "カードの作成", new_list_card_path(list)
+      
+      
+
+
+# :javascript
+#   var list_id = $("ul[id]");
+#   console.log(list_id);
+#   $(function(){
+#     $(liast_id).sortable({
+#       connectWith: ".content",
+#       update: function() {
+#         console.log("ok");
+#       }
+#     });
+#   });

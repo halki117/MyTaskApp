@@ -1,3 +1,5 @@
 class List < ApplicationRecord
-  has_many :cards, dependent: :destroy
+  acts_as_list
+  has_many :cards, ->{ order(position: :asc) }, dependent: :destroy
+  scope :sorted, ->{ order(position: :asc)}
 end
